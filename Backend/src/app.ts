@@ -9,6 +9,7 @@ import memberRouter from '../src/routes/member.routes'
 import channelRouter from '../src/routes/channel.routes'
 import conversationRouter from '../src/routes/conversation.routes'
 import videoRouter from '../src/routes/video.routes'
+import gptRouter from '../src/routes/gpt.routes'
 import { createServer } from "http";
 import { Server } from "socket.io";
 
@@ -39,5 +40,6 @@ app.use("/api/v1/members", memberRouter)
 app.use("/api/v1/channels", channelRouter)
 app.use("/api/v1/conversations", conversationRouter)
 app.use("/api/v1/video", videoRouter)
+app.use("/api/v1/gpt", gptRouter)
 
 export { app, httpServer };

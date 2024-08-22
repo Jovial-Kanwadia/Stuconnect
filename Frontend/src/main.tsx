@@ -18,7 +18,9 @@ import ChannelIdPage from '@/pages/ChannelIdPage'
 import MemberIdPage from '@/pages/MemberIdPage'
 import VideoRoom from '@/components/chat/VideoRoom'
 import AudioRoom from '@/components/chat/AudioRoom'
-// import 'stream-chat-react/dist/css/v2/index.css'
+import LayoutOpenAI from '@/pages/OpenAI/LayoutOpenAI'
+import FilePage from '@/pages/OpenAI/FilePage'
+import ChatGPT from '@/pages/OpenAI/ChatGPT'
 
 const router = createBrowserRouter([
   // Protected Routes are Layout and its childrens
@@ -47,13 +49,27 @@ const router = createBrowserRouter([
         ]
       },
       {
+        path: "openai/",
+        element: <LayoutOpenAI/>,
+        children: [
+          {
+            path: "file",
+            element: <FilePage/>,
+          },
+          {
+            path: "chatgpt",
+            element: <ChatGPT/>,
+          }
+        ]
+      },
+      {
         path: "video/:videoId",
         element: <VideoRoom/>
       },
       {
         path: "audio/:audioId",
         element: <AudioRoom/>
-      }
+      },
     ]
   },
   //Public Routes

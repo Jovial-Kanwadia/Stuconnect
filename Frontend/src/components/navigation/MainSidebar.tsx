@@ -12,8 +12,9 @@ import { ModeToggle } from "@/components/theme/mode-toggle";
 import UserButton from "@/components/auth/user-button";
 import AddServerModal from "@/components/modals/AddServerModal"; // Correct import path
 import { fetchMembers } from "@/features/member/MembersSlice";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchChannels } from "@/features/channel/ChannelsSlice";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 
 
@@ -23,6 +24,7 @@ const MainSidebar = () => {
     const servers: Server[] = useSelector(selectServers);
     const [isOpen, setIsOpen] = useState(false);
     const params = useParams()
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (params.id) {
@@ -64,9 +66,24 @@ const MainSidebar = () => {
                     </div>
                 ))}
             </ScrollArea>
+            <Separator className="h-[1px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mx-auto" />
             <div className="pb-3 mt-auto flex flex-col items-center gap-y-4">
                 <ModeToggle />
                 <UserButton />
+                <div>
+                    <ActionTooltip side="right" align="end" label="Docs">
+                        <Avatar onClick={() => window.open('https://na-e282180f.mintlify.app/', '_blank')}>
+                            <AvatarImage src='https://cdn3d.iconscout.com/3d/premium/thumb/document-10789279-8747400.png' alt="@shadcn" className='cursor-pointer' />
+                        </Avatar>
+                    </ActionTooltip>
+                </div>
+                <div>
+                    <ActionTooltip side="right" align="end" label="Docs">
+                        <Avatar onClick={() => {navigate(`/openai/file`)}}>
+                            <AvatarImage src='https://static.vecteezy.com/system/resources/previews/022/841/114/original/chatgpt-logo-transparent-background-free-png.png' alt="@shadcn" className='cursor-pointer' />
+                        </Avatar>
+                    </ActionTooltip>
+                </div>
             </div>
             <AddServerModal isOpen={isOpen} onClose={toggleModal} />
         </div>
@@ -74,3 +91,5 @@ const MainSidebar = () => {
 };
 
 export default MainSidebar;
+
+// https://i.pinimg.com/736x/33/d5/cb/33d5cbb35f83f09537b33fe52b51ba30.jpg

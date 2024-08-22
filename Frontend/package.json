@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@cometchat-pro/chat": "^3.0.13",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
     "@hookform/resolvers": "^3.6.0",
     "@livekit/components-react": "^2.3.6",
     "@livekit/components-styles": "^1.0.12",

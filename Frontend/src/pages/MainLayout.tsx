@@ -10,6 +10,7 @@ const MainLayout = () => {
   const dispatch = useDispatch<AppDispatch>();
   const profile = useSelector(selectUserProfile);
   const navigate = useNavigate();
+  console.log(profile);
 
   useEffect(() => {
     dispatch(fetchProfile());
@@ -30,7 +31,7 @@ const MainLayout = () => {
         <ServerSidebar/>
       </div>
       <main className='hidden z-0 md:flex h-full w-full flex-col fixed left-[305px]'>
-        <Outlet />
+        <Outlet/>
       </main>
     </div>
   );
