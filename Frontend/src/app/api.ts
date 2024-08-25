@@ -10,16 +10,13 @@ const api = axios.create({
   withCredentials: true, // This ensures cookies are sent with requests
 });
 
-export const initializeApiInterceptors = (store: Store) => {
-  // Function to get access token from store
-  const getAccessToken = () => store.getState().auth.accessToken;
-
+export const initializeApiInterceptors = (store: Store, token: string | null) => {
   // Request interceptor to add the access token to headers
   api.interceptors.request.use(
     (config) => {
-      const token = getAccessToken();
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
+        // console.log('Request Config:', config);
       }
       return config;
     },

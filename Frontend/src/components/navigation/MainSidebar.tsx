@@ -78,7 +78,7 @@ const MainSidebar = () => {
                     </ActionTooltip>
                 </div>
                 <div>
-                    <ActionTooltip side="right" align="end" label="Docs">
+                    <ActionTooltip side="right" align="end" label="OpenAI">
                         <Avatar onClick={() => {navigate(`/openai/file`)}}>
                             <AvatarImage src='https://static.vecteezy.com/system/resources/previews/022/841/114/original/chatgpt-logo-transparent-background-free-png.png' alt="@shadcn" className='cursor-pointer' />
                         </Avatar>

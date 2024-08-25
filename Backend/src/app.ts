@@ -24,9 +24,21 @@ const io = new Server(httpServer);
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true,
+    allowedHeaders: ['Authorization', 'Content-Type'],
 }));
 
-app.options('*', cors());
+app.options('*', cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+}));
+
+// app.use((req, res, next) => {
+//     console.log('Incoming request:', {
+//         origin: req.headers.origin,
+//         headers: req.headers,
+//     });
+//     next();
+// });
 
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));

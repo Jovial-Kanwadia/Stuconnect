@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import api from '@/app/api';
 import { displayError, extractErrorMessage } from '@/lib/utils';
 import { resetStore } from '@/app/resetActions';
+import { RootState } from '@/app/store';
 
 interface AuthState {
   accessToken: string | null;
@@ -23,7 +24,8 @@ interface Credentials {
 export const login = createAsyncThunk('auth/login', async (credentials: Credentials, { rejectWithValue }) => {
   try {
     const response = await api.post('users/login', credentials);
-    return response.data;
+    // console.log(response.data.data);
+    return response.data.data;
   } catch (error: any) {
     if (error.response && error.response.data) {
       const errorMessage = extractErrorMessage(error.response.data)
@@ -82,4 +84,5 @@ const authSlice = createSlice({
 });
 
 export const { logoutSuccess, setAccessToken } = authSlice.actions;
+export const selectAuth = (state: RootState) => state.auth.auth
 export default authSlice.reducer;

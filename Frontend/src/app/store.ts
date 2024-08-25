@@ -20,7 +20,6 @@ import serverReducer from '@/features/server/ServerSlice';
 import channelReducer from '@/features/channel/ChannelsSlice';
 import memberReducer from '@/features/member/MembersSlice';
 import { resetStore } from '@/app/resetActions'; // Import the reset action
-
 // Combine all reducers
 const rootReducer = combineReducers({
   auth: authReducer,

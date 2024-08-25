@@ -26,23 +26,23 @@ const router = createBrowserRouter([
   // Protected Routes are Layout and its childrens
   {
     path: "/",
-    element: <Layout/>,
+    element: <Layout />,
     children: [
       {
         path: "",
-        element: <MainLayout/>,
+        element: <MainLayout />,
         children: [
           {
             path: "servers/:id/",
-            element: <ServerIdPage/>,
+            element: <ServerIdPage />,
             children: [
               {
                 path: "channels/:channelId",
-                element: <ChannelIdPage/>
+                element: <ChannelIdPage />
               },
               {
                 path: "members/:memberId",
-                element: <MemberIdPage/>
+                element: <MemberIdPage />
               },
             ]
           },
@@ -50,52 +50,50 @@ const router = createBrowserRouter([
       },
       {
         path: "openai/",
-        element: <LayoutOpenAI/>,
+        element: <LayoutOpenAI />,
         children: [
           {
             path: "file",
-            element: <FilePage/>,
+            element: <FilePage />,
           },
           {
-            path: "chatgpt",
-            element: <ChatGPT/>,
+            path: "chatgpt/:fileName",
+            element: <ChatGPT />,
           }
         ]
       },
       {
         path: "video/:videoId",
-        element: <VideoRoom/>
+        element: <VideoRoom />
       },
       {
         path: "audio/:audioId",
-        element: <AudioRoom/>
+        element: <AudioRoom />
       },
     ]
   },
   //Public Routes
   {
     path: "/sign-in",
-    element: <SignIn/>
+    element: <SignIn />
   },
   {
     path: "/sign-up",
-    element: <SignUp/>
+    element: <SignUp />
   },
   {
     path: "/test",
-    element: <Test/>
+    element: <Test />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <RouterProvider router={router}/>
-          <ToastContainer newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
-        </ThemeProvider>
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <RouterProvider router={router} />
+        <ToastContainer newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+      </ThemeProvider>
+    </PersistGate>
+  </Provider>
 )

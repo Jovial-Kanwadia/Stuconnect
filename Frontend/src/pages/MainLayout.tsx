@@ -10,7 +10,6 @@ const MainLayout = () => {
   const dispatch = useDispatch<AppDispatch>();
   const profile = useSelector(selectUserProfile);
   const navigate = useNavigate();
-  console.log(profile);
 
   useEffect(() => {
     dispatch(fetchProfile());
