@@ -9,10 +9,10 @@ import {
     updateUsername,
     updateUserAvatar,
     updateUserCoverImage,
-} from "../controllers/user.controller";
+} from "../controllers/user.controller.js";
 
-import {upload} from "../middleware/multer.middleware";
-import { verifyJWT } from "../middleware/auth.middleware";
+import {upload} from "../middleware/multer.middleware.js";
+import { verifyJWT } from "../middleware/auth.middleware.js";
 
 const router = Router()
 

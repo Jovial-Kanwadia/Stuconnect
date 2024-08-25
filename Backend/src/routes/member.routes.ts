@@ -4,8 +4,8 @@ import {
     changeRoleToGuest,
     changeRoleToModerator,
     kickOutMember, 
-} from '../controllers/member.controller'
-import { verifyJWT } from "../middleware/auth.middleware";
+} from '../controllers/member.controller.js'
+import { verifyJWT } from "../middleware/auth.middleware.js";
 
 const router = Router()
 

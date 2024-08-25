@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { getChannelsByServerId, createChannel, deleteChannel } from '../controllers/channel.controller'
-import { verifyJWT } from "../middleware/auth.middleware";
+import { getChannelsByServerId, createChannel, deleteChannel } from '../controllers/channel.controller.js'
+import { verifyJWT } from "../middleware/auth.middleware.js";
 
 const router = Router()
 

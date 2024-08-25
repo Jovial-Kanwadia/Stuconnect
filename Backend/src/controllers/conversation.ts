@@ -1,10 +1,10 @@
 import { Response } from "express";
-import { AuthRequest } from "../middleware/auth.middleware";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiError } from "../utils/ApiError";
-import Conversation, { IConversation } from "../models/conversation.model";
-import { ApiResponse } from "../utils/ApiResponse";
-import Member from "../models/member.model";
+import { AuthRequest } from "../middleware/auth.middleware.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
+import Conversation, { IConversation } from "../models/conversation.model.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import Member from "../models/member.model.js";
 
 
 const fetchConversation = asyncHandler(async (req: AuthRequest, res: Response) => {

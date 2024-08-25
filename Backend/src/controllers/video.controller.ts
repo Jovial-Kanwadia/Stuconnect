@@ -1,7 +1,7 @@
 import { Response } from 'express';
-import { AuthRequest } from '../middleware/auth.middleware';
-import { asyncHandler } from '../utils/asyncHandler';
-import { ApiResponse } from '../utils/ApiResponse';
+import { AuthRequest } from '../middleware/auth.middleware.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+import { ApiResponse } from '../utils/ApiResponse.js';
 
 const createLivekitVideoToken = asyncHandler(async (req: AuthRequest, res: Response) => {
     const { roomName, participantName } = req.body;

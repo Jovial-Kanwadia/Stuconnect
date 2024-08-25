@@ -1,10 +1,10 @@
 import { Response } from "express";
-import { AuthRequest } from "../middleware/auth.middleware";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiError } from "../utils/ApiError";
-import Channel, { ChannelType, IChannel } from "../models/channel.model";
-import { ApiResponse } from "../utils/ApiResponse";
-import Server from "../models/server.model";
+import { AuthRequest } from "../middleware/auth.middleware.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
+import Channel, { ChannelType, IChannel } from "../models/channel.model.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import Server from "../models/server.model.js";
 
 
 const getChannelsByServerId = asyncHandler(async(req: AuthRequest, res: Response) => {

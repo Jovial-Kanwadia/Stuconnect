@@ -1,10 +1,10 @@
 import { Response } from "express";
-import { AuthRequest } from "../middleware/auth.middleware";
-import Profile, { IProfile } from "../models/profile.model";
-import { IUser } from "../models/user.model";
-import { ApiError } from "../utils/ApiError";
-import { ApiResponse } from "../utils/ApiResponse";
-import { asyncHandler } from "../utils/asyncHandler";
+import { AuthRequest } from "../middleware/auth.middleware.js";
+import Profile, { IProfile } from "../models/profile.model.js";
+import { IUser } from "../models/user.model.js";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 const getUserProfile = asyncHandler(async (req: AuthRequest, res: Response) => {
     const user: IUser | null = req.user;

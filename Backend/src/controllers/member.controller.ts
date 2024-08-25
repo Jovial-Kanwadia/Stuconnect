@@ -1,10 +1,10 @@
 import { Response } from "express";
-import { AuthRequest } from "../middleware/auth.middleware";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiError } from "../utils/ApiError";
-import { ApiResponse } from "../utils/ApiResponse";
-import Member, { IMember } from "../models/member.model";
-import Profile, { IProfile } from "../models/profile.model";
+import { AuthRequest } from "../middleware/auth.middleware.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import Member, { IMember } from "../models/member.model.js";
+import Profile, { IProfile } from "../models/profile.model.js";
 
 
 const getMembersByServerId = asyncHandler(async(req: AuthRequest, res: Response) => {

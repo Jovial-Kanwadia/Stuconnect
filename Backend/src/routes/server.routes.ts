@@ -4,9 +4,9 @@ import {
     getServersWhereUserIsMember,
     joinServer,
     leaveServer,
-} from '../controllers/server.controller'
-import { verifyJWT } from "../middleware/auth.middleware";
-import { upload } from "../middleware/multer.middleware";
+} from '../controllers/server.controller.js'
+import { verifyJWT } from "../middleware/auth.middleware.js";
+import { upload } from "../middleware/multer.middleware.js";
 
 const router = Router()
 

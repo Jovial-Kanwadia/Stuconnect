@@ -3,8 +3,8 @@ import {
     getProfilesByServerId,
     getUserProfile,
     getProfileById,
-} from '../controllers/profile.controller'
-import { verifyJWT } from "../middleware/auth.middleware";
+} from '../controllers/profile.controller.js'
+import { verifyJWT } from "../middleware/auth.middleware.js";
 
 const router = Router()
 

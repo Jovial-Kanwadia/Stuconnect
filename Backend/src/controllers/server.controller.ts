@@ -1,17 +1,17 @@
 import { Response } from "express";
 import mongoose from "mongoose";
 import { v4 as uuidv4 } from 'uuid';
-import { AuthRequest } from "../middleware/auth.middleware";
+import { AuthRequest } from "../middleware/auth.middleware.js";
 
-import Server, { IServer } from "../models/server.model";
-import Member, { IMember, MemberRole } from "../models/member.model";
-import Channel, { ChannelType, IChannel } from "../models/channel.model";
-import Profile from "../models/profile.model";
+import Server, { IServer } from "../models/server.model.js";
+import Member, { IMember, MemberRole } from "../models/member.model.js";
+import Channel, { ChannelType, IChannel } from "../models/channel.model.js";
+import Profile from "../models/profile.model.js";
 
-import { ApiError } from "../utils/ApiError";
-import { ApiResponse } from "../utils/ApiResponse";
-import { asyncHandler } from "../utils/asyncHandler";
-import { uploadOnCloudinary } from "../utils/Cloudinary";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { uploadOnCloudinary } from "../utils/Cloudinary.js";
 
 
 

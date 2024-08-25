@@ -1,18 +1,18 @@
 import { Response } from "express";
-import { AuthRequest } from "../middleware/auth.middleware";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiError } from "../utils/ApiError";
+import { AuthRequest } from "../middleware/auth.middleware.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
 import * as fs from 'fs';
 import * as path from 'path';
-import { ApiResponse } from "../utils/ApiResponse";
+import { ApiResponse } from "../utils/ApiResponse.js";
 import { v4 as uuidv4 } from 'uuid';
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import 'dotenv/config';
 import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
 import { Pinecone } from '@pinecone-database/pinecone';
 import { PineconeStore } from "@langchain/pinecone";
-import GPTfile from "../models/gptFile.model";
-import { IUser } from "../models/user.model";
+import GPTfile from "../models/gptFile.model.js";
+import { IUser } from "../models/user.model.js";
 
 const pinecone = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
 const pineconeIndex = pinecone.index(process.env.PINECONE_INDEX!);

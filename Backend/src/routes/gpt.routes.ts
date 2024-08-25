@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { verifyJWT } from "../middleware/auth.middleware";
+import { verifyJWT } from "../middleware/auth.middleware.js";
 import { 
     getFileCreateEmbeddingStoreInPinecone,
     fetchSimilarChunkFromPinecone,
     deleteNamespaceFromPinecone,
     fetchAllFilesFromDB
-} from '../controllers/embedding.controller'
+} from '../controllers/embedding.controller.js'
 
 const router = Router()
 

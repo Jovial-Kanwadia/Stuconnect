@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { 
     createLivekitVideoToken
-} from '../controllers/video.controller'
-import { verifyJWT } from "../middleware/auth.middleware";
+} from '../controllers/video.controller.js'
+import { verifyJWT } from "../middleware/auth.middleware.js";
 
 const router = Router()
 
