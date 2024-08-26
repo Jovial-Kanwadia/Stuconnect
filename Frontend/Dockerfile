@@ -14,9 +14,9 @@ RUN npm install
 COPY . .
 
 # Set environment variables directly in the Dockerfile
-ENV VITE_BACKEND_URL="http://localhost:8000/api/v1"
+ENV VITE_BACKEND_URL=${VITE_BACKEND_URL}
 ENV LIVEKIT_URL="wss://stuconnect-qnglxjxo.livekit.cloud"
-ENV VITE_OPENAI_API_KEY="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"
+ENV VITE_OPENAI_API_KEY="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"
 
 # Build the application for production
 RUN npm run build
