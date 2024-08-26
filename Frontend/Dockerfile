@@ -16,7 +16,7 @@ COPY . .
 # Set environment variables directly in the Dockerfile
 ENV VITE_BACKEND_URL=${VITE_BACKEND_URL}
 ENV LIVEKIT_URL="wss://stuconnect-qnglxjxo.livekit.cloud"
-ENV VITE_OPENAI_API_KEY="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"
+ENV VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY}
 
 # Build the application for production
 RUN npm run build
