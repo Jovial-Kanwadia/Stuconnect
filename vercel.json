@@ -1,14 +1,22 @@
 {
-    "projects": [
+    "builds": [
         {
-            "name": "Backend",
             "src": "Backend/Dockerfile",
-            "use": "docker"
+            "use": "@vercel/docker"
         },
         {
-            "name": "Frontend",
             "src": "Frontend/Dockerfile",
-            "use": "docker"
+            "use": "@vercel/docker"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "Backend/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "Frontend/$1"
         }
     ]
 }
