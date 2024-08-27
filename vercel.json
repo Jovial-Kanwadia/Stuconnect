@@ -1,0 +1,14 @@
+{
+    "projects": [
+        {
+            "name": "Backend",
+            "src": "Backend/Dockerfile",
+            "use": "docker"
+        },
+        {
+            "name": "Frontend",
+            "src": "Frontend/Dockerfile",
+            "use": "docker"
+        }
+    ]
+}

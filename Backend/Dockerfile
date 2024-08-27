@@ -43,25 +43,6 @@ COPY --from=dependencies /app/node_modules ./node_modules
 # Copy the package.json file
 COPY --from=dependencies /app/package.json ./
 
-# Set environment variables
-ENV PORT=8000 \
-    MONGODB_URI="mongodb+srv://jovialkanwadia:STpkkbXvs6enswf0@cluster0.eetfiei.mongodb.net/" \
-    DB_NAME="stuconnect" \
-    CORS_ORIGIN=${CORS_ORIGIN} \
-    ACCESS_TOKEN_SECRET="13VnAJASy89xPLa7CCAOAh4lDx54JXss" \
-    ACCESS_TOKEN_EXPIRY="1d" \
-    REFRESH_TOKEN_SECRET="xPxsTlzfiXdhCQArucCGeE7j8sTWkkEO" \
-    REFRESH_TOKEN_EXPIRY="10d" \
-    CLOUDINARY_CLOUD_NAME="dndtcrqmf" \
-    CLOUDINARY_API_KEY="178886428461539" \
-    CLOUDINARY_API_SECRET="k4McFfI2W717ott4o1LzNBTN9tA" \
-    LIVEKIT_URL="wss://stuconnect-qnglxjxo.livekit.cloud" \
-    LIVEKIT_API_KEY="APINFKDAUeHrhPK" \
-    LIVEKIT_API_SECRET="2nmtFQuGqzh0Uj4xUYKmJeD9wlTOeT03dqMjrK7qbEu" \
-    PINECONE_API_KEY="c626590f-efb4-4cf1-997d-52128d0ed8f8" \
-    HUGGINGFACEHUB_API_KEY="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" \
-    PINECONE_INDEX="test"
-
 # Expose the port the app runs on
 EXPOSE 8000
 
