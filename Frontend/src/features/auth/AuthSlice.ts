@@ -72,8 +72,12 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      state.accessToken = action.payload.accessToken;
-      state.isAuthenticated = true;
+      if (action.payload && action.payload.accessToken) {
+        state.accessToken = action.payload.accessToken;
+        state.isAuthenticated = true;
+      } else {
+        console.error('Login payload is missing accessToken:', action.payload);
+      }
     });
     builder.addCase(logout.fulfilled, (state) => {
       state.accessToken = null;
