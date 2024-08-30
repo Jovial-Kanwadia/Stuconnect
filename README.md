@@ -1,5 +1,57 @@
 # Stuconnect
 
+Welcome to the StuConnect project! This guide will help you set up the project locally.
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v14.x or higher)
+- [npm](https://www.npmjs.com/) (v6.x or higher)
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/stuconnect.git
+cd stuconnect
+
+cd backend
+```
+```bash
+MONGODB_URI="your_mongodb_uri"
+DB_NAME="your_database_name"
+PORT=your_port
+CORS_ORIGIN="your_frontend_url"
+
+ACCESS_TOKEN_SECRET="your_access_token_secret"
+ACCESS_TOKEN_EXPIRY="your_access_token_expiry"
+REFRESH_TOKEN_SECRET="your_refresh_token_secret"
+REFRESH_TOKEN_EXPIRY="your_refresh_token_expiry"
+
+CLOUDINARY_CLOUD_NAME="your_cloudinary_cloud_name"
+CLOUDINARY_API_KEY="your_cloudinary_api_key"
+CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
+
+LIVEKIT_URL="your_livekit_url"
+LIVEKIT_API_KEY="your_livekit_api_key"
+LIVEKIT_API_SECRET="your_livekit_api_secret"
+```
+```bash
+npm install
+```
+```bash
+cd ../frontend
+```
+```bash
+VITE_BACKEND_URL="your_backend_url"
+VITE_LIVEKIT_URL="your_livekit_url"
+VITE_OPENAI_API_KEY="your_openai_api_key"
+```
+```bash
+npm install
+
+```
+
 ## Screenshots
 
 ### S1: Login/Sign-in Form
