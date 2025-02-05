@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import './main.css'
+import '@/main.css'
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from '@/Layout'
