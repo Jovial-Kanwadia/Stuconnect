@@ -72,18 +72,18 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      // if (action.payload && action.payload.accessToken) {
-      //   state.accessToken = action.payload.accessToken;
-      //   state.isAuthenticated = true;
-      // } else {
-      //   console.error('Login payload is missing accessToken:', action.payload);
-      // }
-      try {
+      if (action.payload && action.payload.accessToken) {
         state.accessToken = action.payload.accessToken;
         state.isAuthenticated = true;
-      } catch (error) {
-        console.log("Error in login", error);
+      } else {
+        console.error('Login payload is missing accessToken:', action.payload);
       }
+      // try {
+      //   state.accessToken = action.payload.accessToken;
+      //   state.isAuthenticated = true;
+      // } catch (error) {
+      //   console.log("Error in login", error);
+      // }
     });
     builder.addCase(logout.fulfilled, (state) => {
       state.accessToken = null;
