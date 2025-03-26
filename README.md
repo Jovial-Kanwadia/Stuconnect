@@ -120,6 +120,8 @@ npm run dev
 
 - Backend will typically run on `http://localhost:8000`
 - Frontend will typically run on `http://localhost:5173`
+- Register using email and password 
+- Create a new server using top left button
 
 ## 7. Contributing
 
