@@ -1,66 +1,139 @@
-# Stuconnect
+# This guide will help you set up the project locally.
 
-Developed an advanced social collaboration platform that replicates and extends the functionality of modern social media applications with several cutting-edge integrations:
+## Prerequisites
 
-1. RAG Application Integration: Implemented a sophisticated file and document interaction system. Users can upload various documents, which are embedded using Hugging Face models and stored in Pinecone DB. Leveraging OpenAI's LLM, users can query and interact with their documents in real-time, facilitating a dynamic user experience.
+Before you begin, ensure you have the following installed:
+- Git
+- Node.js (recommended version 18.x or later)
+- npm (Node Package Manager)
+- A GitHub account
 
-2. Robust JWT Authentication: Architected a secure authentication mechanism using JWT tokens (both access and refresh). Integrated API interceptors to ensure secure communication, managing both public and protected routes across the platform.
+## 1. Fork the Repository
 
-3. Dynamic Server and Channel Management: Engineered the ability for users to create and manage multiple servers and channels, including text, audio, and video channels, akin to contemporary social media platforms. Real-time chat and multimedia interactions are supported through the integration of Socket.IO and LiveKit, offering seamless communication and collaboration.
+1. Navigate to the project repository on GitHub
+2. Click the "Fork" button in the top-right corner of the page
+   - This creates a copy of the repository in your GitHub account
+3. Choose your personal account as the destination for the fork
 
-4. Comprehensive State Management: Utilized Redux Toolkit to handle complex state management across the frontend, ensuring a responsive and efficient user interface. Implemented cloud-based file and image uploads via Multer and Cloudinary, enabling users to manage content effectively.
-
-5. Granular Access Control: Designed and enforced a multi-tiered access control system with roles such as Admin, Moderator, and Member. This system governs the creation of channels and modifications to servers, maintaining a secure and organized environment.
-
-6. Modern UI/UX Design: Crafted a visually appealing and highly functional user interface using Tailwind CSS and Shadcn. Integrated smooth animations and transitions, enhancing the overall user experience and making the application both intuitive and engaging.
-
-
-## This guide will help you set up the project locally.
-
-- [Node.js](https://nodejs.org/) (v14.x or higher)
-- [npm](https://www.npmjs.com/) (v6.x or higher)
-
-## Getting Started
-
-### 1. Clone the Repository
+## 2. Clone Your Forked Repository
 
 ```bash
-git clone https://github.com/yourusername/stuconnect.git
-cd stuconnect
+# Replace <your-username> with your GitHub username
+git clone https://github.com/<your-username>/stuconnect.git
 
+# Navigate to the project directory
+cd stuconnect
+```
+
+## 3. Backend Setup
+
+### 3.1 Environment Configuration
+
+Navigate to the backend directory:
+
+```bash
 cd backend
 ```
-```bash
-MONGODB_URI="your_mongodb_uri"
-DB_NAME="your_database_name"
-PORT=your_port
-CORS_ORIGIN="your_frontend_url"
 
-ACCESS_TOKEN_SECRET="your_access_token_secret"
-ACCESS_TOKEN_EXPIRY="your_access_token_expiry"
-REFRESH_TOKEN_SECRET="your_refresh_token_secret"
-REFRESH_TOKEN_EXPIRY="your_refresh_token_expiry"
+Create a `.env` file with the following content:
 
-CLOUDINARY_CLOUD_NAME="your_cloudinary_cloud_name"
-CLOUDINARY_API_KEY="your_cloudinary_api_key"
-CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
+```env
+MONGODB_URI="mongodb+srv://jovialkanwadia:geimpPob0KJZJc7b@cluster0.eetfiei.mongodb.net/"
+DB_NAME="stuconnect"
+PORT=8000
+CORS_ORIGIN="http://localhost:5173"
 
-LIVEKIT_URL="your_livekit_url"
-LIVEKIT_API_KEY="your_livekit_api_key"
-LIVEKIT_API_SECRET="your_livekit_api_secret"
+ACCESS_TOKEN_SECRET=13VnAJASy89xPLa7CCAOAh4lDx54JXss
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=xPxsTlzfiXdhCQArucCGeE7j8sTWkkEO
+REFRESH_TOKEN_EXPIRY=10d
+
+CLOUDINARY_CLOUD_NAME="dndtcrqmf"
+CLOUDINARY_API_KEY="178886428461539"   
+CLOUDINARY_API_SECRET="k4McFfI2W717ott4o1LzNBTN9tA" 
+
+LIVEKIT_URL="wss://stuconnect-qnglxjxo.livekit.cloud"
+LIVEKIT_API_KEY="APINFKDAUeHrhPK"
+LIVEKIT_API_SECRET="2nmtFQuGqzh0Uj4xUYKmJeD9wlTOeT03dqMjrK7qbEu"
+
+PINECONE_API_KEY="c626590f-efb4-4cf1-997d-52128d0ed8f8"
+HUGGINGFACEHUB_API_KEY="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"
+PINECONE_INDEX=test
 ```
+
+> **Note:** These environment variables have been pre-configured for you. Do not share these credentials publicly.
+
+### 3.2 Install Backend Dependencies
+
 ```bash
+# Install required npm packages
 npm install
 ```
+
+## 4. Frontend Setup
+
+### 4.1 Environment Configuration
+
+Navigate to the frontend directory:
+
 ```bash
 cd ../frontend
 ```
-```bash
-VITE_BACKEND_URL="your_backend_url"
-VITE_LIVEKIT_URL="your_livekit_url"
-VITE_OPENAI_API_KEY="your_openai_api_key"
-```
-```bash
-npm install
 
+Create a `.env` file with the following content:
+
+```env
+VITE_BACKEND_URL="http://localhost:8000/api/v1"
+VITE_LIVEKIT_URL="wss://stuconnect-qnglxjxo.livekit.cloud"
+VITE_OPENAI_API_KEY=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
 ```
+
+> **Note:** These environment variables have been pre-configured for you. Do not share these credentials publicly.
+
+### 4.2 Install Frontend Dependencies
+
+```bash
+# Install required npm packages
+npm install
+```
+
+## 5. Running the Application
+
+### 5.1 Start Backend Server
+
+```bash
+# From the backend directory
+cd backend
+npm run build
+npm run start
+```
+
+### 5.2 Start Frontend Development Server
+
+```bash
+# From the frontend directory
+cd ../frontend
+npm run dev
+```
+
+## 6. Accessing the Application
+
+- Backend will typically run on `http://localhost:8000`
+- Frontend will typically run on `http://localhost:5173`
+
+## 7. Contributing
+
+1. Create a new branch for your feature
+   ```bash
+   git checkout -b feature/your-roll-no
+   ```
+2. Make your changes
+3. Commit your changes
+   ```bash
+   git commit -m "Description of your changes"
+   ```
+4. Push to your fork
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a Pull Request from your fork to the original repository
